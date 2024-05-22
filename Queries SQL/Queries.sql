@@ -1,8 +1,68 @@
 USE TopDrinksDB
 
+-----------------------------------REVISIÓN DE LA TABLA PURCHASE PRICES-------------------------------------------------
+SELECT*
+FROM [2017PurchasePricesDec_Clean]
+ORDER BY Description
+
+-- Contar la cantidad de registros en la tabla PurchasePrices
+SELECT COUNT(*) AS TotalRegistros
+FROM [2017PurchasePricesDec_Clean];
+
+-- Contar la cantidad de valores únicos en la columna PONumber PurchasePrices
+SELECT COUNT(DISTINCT Description) AS ValoresUnicos
+FROM [2017PurchasePricesDec_Clean];
+
+SELECT Description, COUNT(*) AS Repeticiones
+FROM [2017PurchasePricesDec_Clean]
+GROUP BY Description
+HAVING COUNT(*) > 1;
+
+SELECT *
+FROM [2017PurchasePricesDec_Clean]
+WHERE Description= 'Casamigos Blanco';
+
+SELECT Description, Repeticiones
+FROM (
+    SELECT Description, COUNT(*) AS Repeticiones
+    FROM [2017PurchasePricesDec_Clean]
+    GROUP BY Description
+    HAVING COUNT(*) > 1
+) AS Subconsulta;
+
+SELECT *
+FROM [2017PurchasePricesDec_Clean]
+WHERE Description IN (
+    SELECT Description
+    FROM [2017PurchasePricesDec_Clean]
+    GROUP BY Description
+    HAVING COUNT(*) > 1
+);
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SELECT*
+FROM BegInvFINAL12312016_Clean
+
+SELECT*
+FROM EndInvFINAL12312016_Clean
+
+SELECT*
+FROM InvoicePurchases12312016_Clean
 
 SELECT*
 FROM PurchasesFINAL12312016_Clean
+WHERE Description='Clayhouse Syrah Paso Robles'
+ORDER BY Store;
+
+
+
+SELECT*
+FROM SalesFINAL12312016_Clean
+WHERE Description='Clayhouse Syrah Paso Robles'
+ORDER BY Store;
+
 
 SELECT DISTINCT PONumber
 FROM InvoicePurchases12312016_Clean
