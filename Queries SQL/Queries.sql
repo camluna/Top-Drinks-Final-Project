@@ -3,7 +3,7 @@ USE TopDrinksDB
 -----------------------------------REVISIÓN DE LA TABLA PURCHASE PRICES-------------------------------------------------
 SELECT*
 FROM [2017PurchasePricesDec_Clean]
-ORDER BY Description
+ORDER BY VendorNumber
 
 -- Contar la cantidad de registros en la tabla PurchasePrices
 SELECT COUNT(*) AS TotalRegistros
@@ -86,3 +86,32 @@ FROM (
     FROM InvoicePurchases12312016_Clean
 ) AS T
 WHERE Count > 1;
+-------------------------------------------------------------------------------------------------
+--CREAR TABLA DE PROVEEDORES/ VENDEDORES
+
+
+CREATE TABLE Prov (
+    ProveedorID INT,
+    NombreProveedor VARCHAR(50),
+);
+
+INSERT INTO Prov(ProveedorID,NombreProveedor)
+SELECT DISTINCT VendorNumber, VendorName
+FROM [2017PurchasePricesDec_Clean];
+
+select*
+from Prov
+WHERE ProveedorID=10000;
+--order by ProveedorID
+
+
+SELECT*
+FROM [2017PurchasePricesDec_Clean]
+WHERE VendorNumber=10000;
+--ORDER BY VendorNumber DESC
+
+-------------------------------------------------------------------------------------------------
+--CREAR TABLA DE PRODUCTOS
+
+
+
