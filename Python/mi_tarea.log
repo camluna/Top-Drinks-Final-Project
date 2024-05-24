@@ -1,0 +1,11 @@
+ERROR:root:Error procesando datos: [Errno 2] No such file or directory: 'entrada.txt'
+INFO:root:Tarea programada para ejecutarse todos los días a las 22:00
+INFO:root:Tarea programada para ejecutarse todos los días a las 22:00
+INFO:root:Tarea programada para ejecutarse todos los días a las 22:00
+INFO:root:Ejecutando la función procesar_datos()
+ERROR:root:Error procesando datos: [Errno 2] No such file or directory: 'data/entrada.txt'
+INFO:root:Tarea programada para ejecutarse todos los días a las 22:00
+INFO:root:Ejecutando la función procesar_datos()
+ERROR:root:Error procesando datos: [Errno 2] No such file or directory: 'data/entrada.txt'
+INFO:root:Ejecutando la función procesar_datos()
+ERROR:root:Error procesando datos: [Errno 2] No such file or directory: 'data/entrada.txt'
