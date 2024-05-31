@@ -19,22 +19,47 @@ Sin una comprensión detallada de sus existencias y de cómo gestionarlas eficie
 
 <h1>El Proceso</h1>   
 
-<h3>ETL<h3></h3>
+<h3>ETL<h3><h3>
 
 -	El proceso inició con la descarga de los archivos en formato .csv enviados por el cliente y posterior almacenamiento de los mismos en Google Drive
 -	Para conocer los datos, realizamos una primera carga de datos en Python. Con la librería Pandas empezamos la limpieza y normalización de datos, llenando datos nulos, corrigiendo formatos y tipos de datos.
 -	Con los datos limpios, se cargaron los nuevos archivos .csv a SQL Server e iniciamos el EDA
--	Verificamos valores únicos en las columnas para determinar claves primarias y claves foráneas y así poder establecer el flujo de información para la base de datos.
+-	Verificación de valores únicos en las columnas para determinar claves primarias y claves foráneas y así poder establecer el flujo de información para la base de datos.
 
   ![image](https://github.com/camluna/Top-Drinks-Final-Project/assets/145697449/3c3ae7b8-02a0-44dd-aef8-ce9665017f18)
+  
+- Verificación de columnas con valores únicos
+
+  ![image](https://github.com/camluna/Top-Drinks-Final-Project/assets/145697449/91512a53-0410-45fe-bf70-2ed360814d01)
+
+- Normalización de columnas en todas las tablas: cambios de formato y cambios de tipo de dato para poder realizar operaciones entre estas
+
+  ![image](https://github.com/camluna/Top-Drinks-Final-Project/assets/145697449/ecc6f465-df64-4544-a4b0-5784fefb4df8)
 
 
-Automatización de carga de datos
+<h3>Automatización de carga de datos<h3><h3>
+  
+De manera simultánea, se desarrolló un proceso de carga y limpieza de datos automático, que funciona de la siguiente manera: 
 
-HALLAZGOS
+- Conexión de la base de datos a Google Drive: El cliente hace usos de las tablas en excel y  modifica los registros
+  
+- El programa, al momento de identificar que hay registros nuevos, realiza una descarga de estos archivos en una carpeta temporal
+  
+- Por medio de una función, verifica y limpia los datos, y cuando encuentra inconsistencias, el resultado para el registro será 'No Definido'
+  
+- De esta manera, el cliente puede identificar visualmente los valores que están haciendo falta para su posterior análisis
+  
+- Cuando el proceso termina, los archivos se cargan nuevamente a la carpeta de Google Drive
+  
+*Para consultar el código detrás de esta automatización, haz click aquí https://ln.run/S3C7P 
 
--	Inconsistencia en rango de datos por los datos entregados 
--	No hay constancia en las ventas
--	Un rango de datos mas homogeneo 
 
-RESULTADOS
+<h2>Hallazgos </h2> 
+
+1. Inconsistencia en rango de datos: Los datos entregados contienen fechas muy disimiles, por lo cual no es posible hacer un análisis temporal
+2. Las ventas se registran solamente por dos meses (Enero y Febrero), las compras desde Enero hasta Junio y las Ordenes de Compra tienen registros desde Enero hasta Diciembre. Esto sugiere que no hay una homogeneidad en los datos
+3. No se percibe constancia en las ventas. En Febrero hay una caída abrupta de ventas.
+
+
+<h2>Resultados</h2> 
+
