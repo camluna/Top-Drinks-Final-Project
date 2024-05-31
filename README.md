@@ -12,6 +12,7 @@ La empresa se enfrenta al desafío de mantener su competitividad en un entorno c
 Sin una comprensión detallada de sus existencias y de cómo gestionarlas eficientemente, la empresa podría experimentar problemas de logística, exceso o escasez de productos y, finalmente, perdida de ventas.
 
 <h2>Objetivos</h2> 
+
 1.	identificar ubicaciones estratégicas en las cuales se puede iniciar el modelo de compra y venta online 
 2.	Identificar los productos que más rotación presentan para que generen más ventas, y, a su vez, los productos que menos rotación tienen para asi iniciar campañas de promocionamiento de dichos productos, y lograr un aumento de ventas, o por el contrario, determinar si continúan en el catalogo de productos de la compañía
 3.	Generar un dashboard interactivo el cual permitirá que el cliente haga un seguimiento preciso y en tiempo real de su inventario, optimizando así la disponibilidad de productos.
@@ -23,7 +24,10 @@ Sin una comprensión detallada de sus existencias y de cómo gestionarlas eficie
 -	El proceso inició con la descarga de los archivos en formato .csv enviados por el cliente y posterior almacenamiento de los mismos en Google Drive
 -	Para conocer los datos, realizamos una primera carga de datos en Python. Con la librería Pandas empezamos la limpieza y normalización de datos, llenando datos nulos, corrigiendo formatos y tipos de datos.
 -	Con los datos limpios, se cargaron los nuevos archivos .csv a SQL Server e iniciamos el EDA
--	Verificamos valores únicos en las columnas para determinar claves primarias y claves foráneas y así poder establecer el flujo de información para la base de datos. 
+-	Verificamos valores únicos en las columnas para determinar claves primarias y claves foráneas y así poder establecer el flujo de información para la base de datos.
+
+  ![image](https://github.com/camluna/Top-Drinks-Final-Project/assets/145697449/3c3ae7b8-02a0-44dd-aef8-ce9665017f18)
+
 
 Automatización de carga de datos
 
